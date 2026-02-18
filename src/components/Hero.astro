@@ -1,0 +1,69 @@
+---
+import MemoryGraph from './MemoryGraph';
+import CodeTerminal from './CodeTerminal';
+import { ArrowRight, Copy } from "lucide-react";
+---
+
+<section class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-cortex-bg pt-20">
+    
+    <!-- 3D Background (Absolute) -->
+    <div class="absolute inset-0 z-0 opacity-60">
+        <MemoryGraph client:load /> 
+    </div>
+    
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-cortex-bg/80 to-cortex-bg z-0 pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 z-10 relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="text-left space-y-8">
+            <div class="inline-flex items-center px-3 py-1 rounded-full border border-cortex-lime/30 bg-cortex-lime/10 text-cortex-lime text-xs font-mono mb-4">
+                <span class="mr-2">●</span> v4.0.0 Stable Release
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-tight">
+                The Sovereign <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cortex-lime to-cortex-violet">
+                    Memory Layer
+                </span>
+                <br/> for AI Agents.
+            </h1>
+            
+            <p class="text-xl text-gray-400 max-w-lg leading-relaxed">
+                Forget Pinecone. Forget LangChain memory.
+                <strong class="text-white">CORTEX</strong> is the local-first, cryptographically secure memory engine for the next generation of autonomous agents.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <div class="flex items-center bg-cortex-card border border-white/20 rounded-lg px-4 py-3 font-mono text-sm text-gray-300">
+                    <span class="text-cortex-lime mr-2">$</span> pip install cortex-memory
+                    <button class="ml-4 hover:text-white transition-colors" aria-label="Copy command">
+                        <Copy size={16} />
+                    </button>
+                </div>
+                
+                <a href="https://github.com/borjamoskv/cortex" target="_blank" class="flex items-center justify-center px-8 py-3 rounded-lg bg-white text-black font-bold hover:bg-gray-200 transition-all">
+                    View on GitHub <ArrowRight size={18} class="ml-2" />
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Content (Terminal) -->
+        <div class="relative hidden lg:block perspective-1000">
+             <div class="transform rotate-y-[-5deg] rotate-x-[5deg] transition-transform duration-500 hover:rotate-0">
+                <CodeTerminal client:visible />
+             </div>
+             <!-- Decorators -->
+             <div class="absolute -top-10 -right-10 w-72 h-72 bg-cortex-violet/20 rounded-full blur-[100px] -z-10"></div>
+             <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-cortex-lime/10 rounded-full blur-[100px] -z-10"></div>
+        </div>
+
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/30">
+        <ArrowRight size={24} class="rotate-90" />
+    </div>
+
+</section>

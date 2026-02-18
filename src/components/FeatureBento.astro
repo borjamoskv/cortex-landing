@@ -1,0 +1,96 @@
+---
+import { Database, Shield, network, Fingerprint } from "lucide-react";
+---
+
+<section class="py-24 px-4 bg-cortex-bg relative z-10">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-16 text-center tracking-tighter">
+            System <span class="text-cortex-lime">Architecture</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[300px]">
+            
+            <!-- Card 1: Vector Engine (Large) -->
+            <div class="md:col-span-2 relative group overflow-hidden rounded-2xl bg-cortex-card border border-white/10 hover:border-cortex-lime/50 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-br from-cortex-violet/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="p-8 h-full flex flex-col justify-between relative z-10">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-cortex-violet/20 flex items-center justify-center mb-4 text-cortex-violet">
+                            <Database size={24} />
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Sovereign Vector Engine</h3>
+                        <p class="text-gray-400">
+                            Built on `sqlite-vec`. Run semantic search locally with millions of vectors. 
+                            Zero external API calls. Pure Rust + C performance.
+                        </p>
+                    </div>
+                    <div class="font-mono text-xs text-cortex-lime/70 mt-4">
+                        > SELECT distance, content FROM vectors WHERE ...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Privacy (Tall) -->
+            <div class="md:row-span-2 relative group overflow-hidden rounded-2xl bg-cortex-card border border-white/10 hover:border-cortex-lime/50 transition-all duration-500">
+                <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+                <div class="p-8 h-full flex flex-col relative z-10">
+                    <div class="w-12 h-12 rounded-full bg-cortex-lime/20 flex items-center justify-center mb-4 text-cortex-lime">
+                        <Shield size={24} />
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Local-First Privacy</h3>
+                    <p class="text-gray-400 mb-8">
+                        Your AI's memories never leave your machine. CORTEX is 
+                        air-gapped by default.
+                    </p>
+                    <div class="mt-auto border-t border-white/10 pt-4">
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-2">
+                            <span>OpenAI</span>
+                            <span class="text-red-500">Cloud</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-2">
+                            <span>Pinecone</span>
+                            <span class="text-red-500">Cloud</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm font-bold text-white">
+                            <span>CORTEX</span>
+                            <span class="text-cortex-lime">Local</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Consensus (Standard) -->
+             <div class="relative group overflow-hidden rounded-2xl bg-cortex-card border border-white/10 hover:border-cortex-lime/50 transition-all duration-500">
+                <div class="p-8 h-full flex flex-col justify-between relative z-10">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mb-4 text-blue-500">
+                            <!-- Use the 'network' icon equivalent from lucide-react if 'network' is not valid or imported, here I assume 'Share2' or similar network concept -->
+                            <!-- Lucide 'Network' might not exist as named export directly if lowercase. using 'Share2' as proxy or simple svg -->
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-network"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Consensus</h3>
+                        <p class="text-gray-400 text-sm">
+                            Multi-agent agreement protocol. Facts must be verified by sworn agents before entering long-term memory.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Ledger (Standard) -->
+            <div class="relative group overflow-hidden rounded-2xl bg-cortex-card border border-white/10 hover:border-cortex-lime/50 transition-all duration-500">
+                <div class="p-8 h-full flex flex-col justify-between relative z-10">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 text-white">
+                            <Fingerprint size={24} />
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Immutable Ledger</h3>
+                        <p class="text-gray-400 text-sm">
+                            Cryptographic hash-chaining of every memory transaction. Merkle Proofs included.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
