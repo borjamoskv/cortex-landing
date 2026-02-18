@@ -1,0 +1,13 @@
+{
+  "read_latency": {
+    "Local C (CORTEX)": 2.1,
+    "Local Python": 8.5,
+    "Cloud API": 120.0
+  },
+  "write_latency": {
+    "Local C (CORTEX)": 3.4,
+    "Local Python": 15.2,
+    "Cloud API": 150.0
+  },
+  "description": "Latency comparison: Local C-binding (sqlite-vec) vs Pure Python vs Cloud API (network overhead). Lower is better."
+}
